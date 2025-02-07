@@ -9,9 +9,9 @@ any duration
  Event - an activity or incident, involving one of more participating Entities, that occurred/started at a specific 
 point in time - e.g. a meeting or a telephone call. 
  PeriodOfTime - a specific period of time (past, present or future) 
-[Relationship](./Relationships/Relationships.md) - relates Things. 
+[Relationship](./Relationships/Overview.md) - relates Things. 
 
 
 Links to IES4Model 
 Relationships 
-[Relationship](Relationships.md)
+[Relationship](./Relationships/Overview.md)

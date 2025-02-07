@@ -12,18 +12,29 @@ nav:
 
 theme:
   name: material
-
+  palette: 
+    # Palette toggle for light mode
+    - scheme: default
+      toggle:
+        icon: material/brightness-4 
+        name: Switch to dark mode
+    # Palette toggle for dark mode
+    - scheme: slate
+      toggle:
+        icon: material/brightness-4
+        name: Switch to light mode
 nav:
   - Home: index.md
   - IES HTML: ies4.html
   - IES Model: 
-    - Model Overview: ./IES4Model/IES4Model.md
+    - Model Overview: ./IES4Model/Overview.md
     - Relationships: 
-      - Relationships: ./IES4Model/Relationships/Relationships.md
+      - Overview: ./IES4Model/Relationships/Overview.md
     
   - About:
-    - License: license.md
+    - Copyright & License: copyright.md
     - Release Notes: release-notes.md
+
 
 
 plugins:
