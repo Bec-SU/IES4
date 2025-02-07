@@ -24,15 +24,33 @@
 @prefix sparx: <http://data.sparxsystems.com#> .
 @prefix ies: <http://ies.data.gov.uk/ontology/ies4#> .
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
 
 
-<http://ies.data.gov.uk/ontology/ies4> rdf:type owl:Ontology . 
+<http://ies.data.gov.uk/ontology/ies4> 
+    a owl:Ontology ;
+    rdfs:label "IES" ;
+    rdfs:comment """This is a  ontology for testing pyLODE"""@en ;
+.
 
 ies:Accent a rdfs:Class ;
     rdfs:label "Accent"^^xsd:string ;
     sparx:guid "{63409D9A-1779-444a-BF04-23C03B3B2F72}" ;
     rdfs:comment "A Characteristic whose members are people who all share the same national or regional accent" ;
-    rdfs:subClassOf ies:Characteristic .
+    rdfs:subClassOf ies:Characteristic ;
+.
+
+ies:isProfileOf
+    a owl:ObjectProperty ;
+    rdfs:label "is profile of" ;
+    skos:definition "A specification for which this Profile defines constraints, extensions, or which it uses in combination with other specifications, or provides guidance or explanation about its usage"@en ;
+.
+
+ies:Account a rdfs:Class ;
+    rdfs:label "Account"^^xsd:string ;
+    sparx:guid "{31BFE794-924E-44e3-942E-ADC9ED19FBA1}" ;
+    rdfs:comment "An Entity that is the collection of all transactions between a provider and a customer" ;
+    rdfs:subClassOf ies:AccountState, ies:Entity .
 
 ies:Account a rdfs:Class ;
     rdfs:label "Account"^^xsd:string ;
@@ -82,10 +100,10 @@ ies:Accused a rdfs:Class ;
 ies:ActiveEventParticipant a rdfs:Class ;
     rdfs:label "Active Event Participant"^^xsd:string ;
     sparx:guid "{3360DCC9-D39B-4280-8872-2FE122240407}" ;
-    rdfs:comment """An EventParticipant where the participant is "actively" engaged in the Event.
-
-Note: In BORO, EventParticipant would be "Involvement" and ActiveEventParticipant would be "Participation".""" ;
+    rdfs:comment """An EventParticipant where the participant is "actively" engaged in the Event. Note: In BORO, EventParticipant would be "Involvement" and ActiveEventParticipant would be "Participation".""" ;
     rdfs:subClassOf ies:EventParticipant .
+
+
 
 ies:Actor a rdfs:Class ;
     rdfs:label "Actor"^^xsd:string ;
@@ -691,6 +709,7 @@ ies:CommunicationsDevice a rdfs:Class ;
     sparx:guid "{32EB46A5-0FA4-44e9-A9E9-9424E80BDE91}" ;
     rdfs:comment "A Device that provides an endpoint for communications – e.g. mobile telephone, landline, satellite phone, CB Radio, etc." ;
     rdfs:subClassOf ies:Device .
+
 
 ies:CommunicationsIdentifier a rdfs:Class ;
     rdfs:label "Communications Identifier"^^xsd:string ;

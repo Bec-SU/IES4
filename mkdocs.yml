@@ -1,0 +1,49 @@
+site_name: IES4
+
+repo_url: https://github.com/Bec-SU/IES4
+repo_name: IES4
+theme:
+  icon:
+    repo: fontawesome/brands/git-alt
+
+nav:
+  - Home: index.md
+  - About: changelog.md
+
+theme:
+  name: material
+
+nav:
+  - Home: index.md
+  - IES HTML: ies4.html
+  - IES Model: 
+    - Model Overview: ./IES4Model/IES4Model.md
+    - Relationships: 
+      - Relationships: ./IES4Model/Relationships/Relationships.md
+    
+  - About:
+    - License: license.md
+    - Release Notes: release-notes.md
+
+
+plugins:
+  - search
+  - mermaid2:
+      version: '11.0.0'
+      arguments:
+        theme: 'dark'
+        themeVariables:
+          primaryColor: '#BB2528'
+          primaryTextColor: '#fff'
+          primaryBorderColor: '#7C0000'
+          lineColor: '#F8B229'
+          secondaryColor: '#006100'
+          tertiaryColor: '#fff'
+
+markdown_extensions:
+  - pymdownx.superfences:
+        # make exceptions to highlighting of code:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:mermaid2.fence_mermaid
